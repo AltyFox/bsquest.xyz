@@ -9,6 +9,7 @@
 - [ModsBeforeFriday](https://mbf.bsquest.xyz)
 - [List of all mods](https://mods.bsquest.xyz)
 
-> Test
+## How to use X mod
+-- YES
 
-
+## How to use Y mod
