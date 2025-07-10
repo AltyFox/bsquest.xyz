@@ -1,9 +1,9 @@
-name: Deploy Docsify Site
+name: Deploy to GitHub Pages
 
 on:
     push:
         branches:
-            - main
+            - main  # Change to your default branch if different
 
 jobs:
     deploy:
@@ -13,8 +13,14 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
-            - name: Deploy to GitHub Pages
-              uses: peaceiris/actions-gh-pages@v4
+            - name: Setup Pages
+              uses: actions/configure-pages@v4
+
+            - name: Upload site directory
+              uses: actions/upload-pages-artifact@v3
               with:
-                github_token: ${{ secrets.GITHUB_TOKEN }}
-                publish_dir: ./site
+                  path: site
+
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
